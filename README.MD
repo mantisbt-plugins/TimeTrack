@@ -26,7 +26,7 @@ After copying to your webserver :
 - Once installed, click on the plugin-name for further configuration.
 
 In case you want to have an overview in My View, do ensure to define a signal in my_view_page.php.
-Then add the following line right after "layout_page_begin( __FILE__ ); "
+Then add the following line right after "layout_page_begin( __FILE__ ); " <br>
 event_signal( 'EVENT_MYVIEW' ); 
 
 ## Support
