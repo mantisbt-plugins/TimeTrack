@@ -60,7 +60,7 @@ event_signal( 'EVENT_MYVIEW' );
 &nbsp;&nbsp;&nbsp;&nbsp; Default = ON
 - report_other_threshold	<br>
 &nbsp;&nbsp;&nbsp;&nbsp; Level required to make time recording for others <br>
-&nbsp;&nbsp;&nbsp;&nbsp;Default = MANAGER
+&nbsp;&nbsp;&nbsp;&nbsp; Default = MANAGER
 
 ## Support
 
