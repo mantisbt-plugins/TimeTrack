@@ -31,7 +31,7 @@ event_signal( 'EVENT_MYVIEW' );
 
 ## configuration options
 
-- consultant_hourly_charge &nbsp; What is the labor rate per hour &nbsp; Default	= 50
+- consultant_hourly_charge &nbsp;&nbsp;&nbsp;&nbsp; What is the labor rate per hour &nbsp;&nbsp;&nbsp;&nbsp; Default	= 50
 - consultant_manday_definition &nbsp; How many hours in one working day &nbsp; Default = 8
 - timetrack_delete_threshold	&nbsp;	What level is required to delete a time recording &nbsp;	Default = DEVELOPER
 - timetrack_add_threshold		&nbsp;	What level is required to add a time recording	&nbsp;	Deafult = DEVELOPER
