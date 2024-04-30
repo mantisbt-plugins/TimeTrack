@@ -6,27 +6,27 @@ if ( $limit == "50" ) {
 	$query = substr( $query, 0,-8 );
 }
 $content ="";
-$content .= "Issue";
+$content .= lang_get('bug');
 $content .= "|";
-$content .= "Summary";
+$content .= lang_get('summary');
 $content .= "|"; 
-$content .= "Priority";
+$content .= lang_get('priority');
 $content .= "|";
-$content .= "Category";
+$content .= lang_get('category');
 $content .= "|";
-$content .= "Severity";
+$content .= lang_get('severity');
 $content .= "|";
-$content .= "Status"; 
+$content .= lang_get('status');
 $content .= "|";
-$content .= "Recorded";
+$content .= lang_get('recorded');
 $content .= "|";
-$content .= "User";
+$content .= lang_get('time_user');
 $content .= "|";
-$content .= "Information";
+$content .= lang_get('time_information') ;
 $content .= "|";
-$content .= "Allocation";
+$content .= lang_get('time_expenditure_date') ;
 $content .= "|";
-$content .= "Hours";
+$content .= lang_get('time_hours');
 $content .= "\r\n";
 
 $result = db_query($query);
@@ -55,7 +55,7 @@ while ($t_row = db_fetch_array($result)) {
 	$content .= "\r\n";
 }	
 $content .= "\r\n";
-$content .= "You requested these records: ";
+$content .= lang_get('selected_records');
 $content .= "\r\n";
 $content .= $query ;
 header('Content-type: text/enriched');

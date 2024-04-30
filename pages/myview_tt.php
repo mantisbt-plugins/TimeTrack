@@ -105,9 +105,7 @@ while ($t_bug  = db_fetch_array($result)) {
 	# -- end of Repeating bug row --
 	
 }
-
 # -- ====================== end of BUG LIST ========================= --
-
 ?>
 </tbody>
 </table>

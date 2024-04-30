@@ -3,9 +3,9 @@
 class TimeTrackPlugin extends MantisPlugin {
  
 	function register() {
-		$this->name        = 'TimeTrack';
-		$this->description = 'Allows for timetracking within an issue or outside an issue.';
-		$this->version     = '1.01';
+		$this->name        = lang_get("timetrack_title");
+		$this->description = lang_get("timetrack_desc");
+		$this->version     = '1.10';
 		$this->requires    = array('MantisCore'       => '2.0.0',);
 		$this->author      = 'Cas Nuy';
 		$this->contact     = 'Cas-at-nuy.info';
@@ -23,25 +23,43 @@ class TimeTrackPlugin extends MantisPlugin {
 			'timetrack_delete_threshold'	=> DEVELOPER,
 			'timetrack_add_threshold'		=> DEVELOPER,
 			'timetrack_admin_threshold'		=> ADMINISTRATOR,
-			'timetrack_history'				=> OFF,
+			'timetrack_history'				=> ON,
 			'timetrack_maxrec'				=> 35,
+			'show_myview'					=> OFF,
+			'show_main'						=> ON,
+			'report_other_threshold'		=> MANAGER,
 			);
 	}
 
 	function init() { 
 		event_declare('EVENT_MYVIEW');
-		plugin_event_hook( 'EVENT_MYVIEW', 'mainmenu1' );
-		plugin_event_hook( 'EVENT_MENU_MANAGE', 'mainmenu2' );
+		plugin_event_hook( 'EVENT_MYVIEW', 'myview' );
+		plugin_event_hook( 'EVENT_MENU_MAIN', 'mainmenu' );
+		plugin_event_hook( 'EVENT_MENU_MANAGE', 'managemenu' );
 		plugin_event_hook( 'EVENT_VIEW_BUG_EXTRA', 'timetrack_form1' );
 	}
 
 	
-	function mainmenu1() {
-		include 'plugins/TimeTrack/pages/myview_tt.php';
+	function myview() {
+		if ( ON == plugin_config_get( 'show_myview'  ) ) {
+			include 'plugins/TimeTrack/pages/myview_tt.php';
+		}
     }
 
-	function mainmenu2() {
-		return array('<a href="'. plugin_page( 'print_time_tracking_page.php' ) . '">' . lang_get( 'timetrack' ) . '</a>' );
+	function mainmenu() {
+		if ( ON == plugin_config_get( 'show_main'  ) ) {
+			$links = array();
+			$links[] = array(
+			'title' => lang_get("timetrack_mytime"),
+			'url' => plugin_page( 'print_mytime_tracking_page.php', true ),
+			'icon' => 'fa-clock-o'
+			);
+			return $links;
+		}
+    }
+
+	function managemenu() {
+		return array('<a href="'. plugin_page( 'print_time_tracking_page.php' ) . '">' . lang_get( 'timetrack_title' ) . '</a>' );
     }
  
  	function timetrack_form1() {

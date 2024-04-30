@@ -72,29 +72,38 @@ $row_pull_costs_hours = db_fetch_array( $result_pull_costs_hours );
 		<input type="hidden" name="bug_id" value="<?php echo $bug_id;  ?>">
 		<input type="hidden" name="id" value="<?php echo $bug_id;  ?>">
 	    <tr >
+		<?php
+		if ( access_has_bug_level(plugin_config_get( 'report_other_threshold' ), $bug_id ) ) { 
+			?><td> <select tabindex="1" name="informer"><option value="0"><?php echo lang_get( 'print_time_tracking_all_informers' ) ?>
+			<?php print_user_option_list( auth_get_current_user_id() ) ?>
+			</select></td>
+			<?php
+		} else {
+		?>
 		<td><?php echo user_get_name( auth_get_current_user_id() ) ?></td>
+		<?php } ?>
 		<td nowrap>
         <div align="center">
 <?php 
          $current_date = explode ("-", date("Y-m-d"));
 ?>
-        <select tabindex="1" name="day">
+        <select tabindex="2" name="day">
         <?php print_day_option_list( $current_date[2] ) ?>
         </select>
-        <select tabindex="2" name="month">
+        <select tabindex="3" name="month">
         <?php print_month_option_list( $current_date[1] ) ?>
         </select>
-        <select tabindex="3" name="year">
+        <select tabindex="4" name="year">
         <?php print_year_option_list( $current_date[0] ) ?>
         </select>
         <br>
-        <select tabindex="4" name="day1">
+        <select tabindex="5" name="day1">
         <?php print_day_option_list( $current_date[2] ) ?>
         </select>
-        <select tabindex="5" name="month1">
+        <select tabindex="6" name="month1">
         <?php print_month_option_list( $current_date[1] ) ?>
         </select>
-        <select tabindex="6" name="year1">
+        <select tabindex="7" name="year1">
         <?php print_year_option_list( $current_date[0] ) ?>
         </select>
 		</div>
@@ -102,26 +111,26 @@ $row_pull_costs_hours = db_fetch_array( $result_pull_costs_hours );
 		<td><table class="table table-bordered table-condensed table-striped"> 	
         <tr>
         <td><div align="right">
-        <select tabindex="7" name="time_unit">
+        <select tabindex="8" name="time_unit">
         <option value="hr" selected><?php echo lang_get( 'time_hours' ) ?></option>
         <option value="md"><?php echo lang_get( 'time_mandays' ) ?></option>
         </select>
         </div>
         </td>
         <td><div align="left">
-        <input tabindex="8" name="time_value" type="text">
+        <input tabindex="9" name="time_value" type="text">
         </div>
         </td>
         </tr>
         </table>
 		</td>
 		<td><div align="center">
-        <input tabindex="9" type="text" name="time_info">
+        <input tabindex="10" type="text" name="time_info">
         </div>
 		</td>
 		<td>
 		</td>
-		<td><input tabindex="10" name="<?php echo lang_get( 'time_submit' ) ?>" type="submit" value="<?php echo lang_get( 'time_submit' ) ?>">
+		<td><input tabindex="11" name="<?php echo lang_get( 'time_submit' ) ?>" type="submit" value="<?php echo lang_get( 'time_submit' ) ?>">
 		</td>
 		<td>	</td>
 		</tr>

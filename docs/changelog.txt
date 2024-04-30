@@ -1,4 +1,8 @@
 Version 0.90		03-03-2010	Initial version
 Version 0.95		12-05-2010	Ensured full db-api compliant
 Version 0.96		10-06-2010	Fixed bug missing parameter
-Version 1.01		01-05-2024	Made it adhere ot Mantis 2.x
+Version 1.01		29-04-2024	Made it adhere to Mantis 2.x
+Version 1.10		01-05-2024	Improves language file
+								Made option to show in My View page configurable
+								Made option to show in Main menu configurable
+								Added threshold to record time for others

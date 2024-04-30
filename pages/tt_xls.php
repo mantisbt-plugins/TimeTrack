@@ -24,17 +24,17 @@ xmlns="http://www.w3.org/TR/REC-html40">
 <table x:str border=0 cellpadding=0 cellspacing=0 width=100% style='border-collapse:collapse'>
 
 <tr>
-  <td>Issue</td>
-  <td>Summary</td>
-  <td>Priority</td>
-  <td>Category</td>
-  <td>Severity</td>
-  <td>Status</td>
-  <td>Recorded</td>
-  <td>User</td>
-  <td>Information</td>
-  <td>Allocation</td>
-  <td>Hours</td>
+  <td><?php echo lang_get('bug') ?></td>
+  <td><?php echo lang_get('summary') ?></td>
+  <td><?php echo lang_get('priority') ?>y</td>
+  <td><?php echo lang_get('category') ?>y</td>
+  <td><?php echo lang_get('severity') ?></td>
+  <td><?php echo lang_get('status') ?></td>
+  <td><?php echo lang_get('recorded') ?></td>
+  <td><?php echo lang_get('time_user') ?></td>
+  <td><?php echo lang_get('time_information') ?></td>
+  <td><?php echo lang_get('time_expenditure_date') ?></td>
+  <td><?php echo lang_get('time_hours') ?></td>
  </tr>
 
 <?php
@@ -60,7 +60,7 @@ while ($t_row = db_fetch_array($result)) {
 }	
 ?>
 <tr>
-<td>You requested these records: </td>
+<td><?php echo lang_get('selected_records') ?></td>
 </tr><tr>
 <td><?php echo $query ?></td>
 </tr>

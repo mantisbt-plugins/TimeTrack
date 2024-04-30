@@ -1,6 +1,6 @@
 
 # 	Mantis TimeTrack plugin
-Version 1.01
+Version 1.10
 Copyright 2024 Cas Nuy
 
 ## Description
@@ -22,12 +22,25 @@ After copying to your webserver :
 - Start mantis ad administrator
 - Select manage
 - Select manage Plugins
-- Select Install behind TimeTrack 1.01
+- Select Install behind TimeTrack 1.10
 - Once installed, click on the plugin-name for further configuration.
 
 In case you want to have an overview in My View, do ensure to define a signal in my_view_page.php.
-Then add the following line right after "layout_page_begin( __FILE__ ); "
+Then add the following line right after "layout_page_begin( __FILE__ ); "<br>
 event_signal( 'EVENT_MYVIEW' ); 
+
+## configuration options
+
+- consultant_hourly_charge			What is the labor rate per hour						Default	= 50
+- consultant_manday_definition		How many hours in one working day					Default = 8
+- timetrack_delete_threshold		What level is required to delete a time recording	Default = DEVELOPER
+- timetrack_add_threshold			What level is required to add a time recording		Deafult = DEVELOPER
+- timetrack_admin_threshold			What level is required to manage plugin				Default = ADMINISTRATOR
+- timetrack_history					Make history entries for time recording activities	Default = ON
+- timetrack_maxrec					Max records to show without selection criteris		Default = 35
+- show_myview						Show a section in the My View page					Default = OFF
+- show_main							Show an option on the main menu						Default = ON
+- report_other_threshold			Level required to make time recording for others	Default = MANAGER
 
 ## Support
 

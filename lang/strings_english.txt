@@ -37,3 +37,15 @@
 	$s_timetrack_history = "Keep History yes/no";
 	$s_enabledtt= 'Yes';
 	$s_disabledtt='No';
+	
+	$s_timetrack_mytime			= 'My Time';
+	$s_timetrack_title			= 'TimeTrack';
+	$s_timetrack_desc			= 'Allows for timetracking within an issue or outside an issue.';
+	$s_timetrack_xls			= 'Download as XLS';
+	$s_timetrack_csv			= 'Download as CSV';
+	$s_timetrack_total			= 'Total';
+	$s_show_myview				= 'Show section in My View page';
+	$s_show_main				= 'Show option in main menu';
+	$s_report_other_threshold 	= 'Threshold for reporting for somebody else'; 
+	$s_recorded					= 'Recorded';
+	$s_selected_records			= 'You have requested this selection: ';

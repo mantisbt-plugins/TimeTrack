@@ -8,31 +8,26 @@
 # Cas Nuy www.NUY.info 2010-2024
 #
 ########################################################
-
 auth_ensure_user_authenticated();
 layout_page_header( lang_get( 'plugin_format_title' ) );
 layout_page_begin( 'manage_overview_page.php' );
-print_manage_menu( 'print_time_tracking_page.php' );
-
+?>
+<br />
+<?php
 $t_project_id       = 0;
-$informer=@$_REQUEST['informer'];
 $day_from = @$_REQUEST['day_from'];
 $month_from = @$_REQUEST['month_from'];
 $year_from = @$_REQUEST['year_from'];
 $day_to = @$_REQUEST['day_to'];
 $month_to = @$_REQUEST['month_to'];
 $year_to = @$_REQUEST['year_to'];
+$informer = auth_get_current_user_id();
 
 echo '<br><br>';
 
 ?>
-<form method="post" action="plugin.php?page=TimeTrack/print_time_tracking_page.php">
-<?php echo lang_get( 'print_time_tracking_informer' ); ?>
-<select tabindex="1" name="informer"><option value="0"><?php echo lang_get( 'print_time_tracking_all_informers' ) ?>
-<?php 
+<form method="post" action="plugin.php?page=TimeTrack/print_mytime_tracking_page.php">
 
-print_user_option_list(0) ?>
-</select>&nbsp;&nbsp;&nbsp;&nbsp;
 <?php 
 echo lang_get( 'print_time_tracking_from' ) ;
 $current_date = explode ("-", date("Y-m-d"));
@@ -79,12 +74,8 @@ $category_table = db_get_table( 'category' );
 $time_table		= plugin_table('timelog');
 
 $all_reported_bugs_query="select t.id,b.priority,b.id,b.category_id,c.name,b.severity,b.status,t.timestamp,b.summary,t.user,t.info,t.hours,t.expenditure_date from $time_table t,$bug_table b,$category_table c where t.bugid=b.id and b.category_id=c.id ";
-if (empty($informer) ) {
-	$informer =0 ;
-	$all_reported_bugs_query=$all_reported_bugs_query ;
-} else {
-	$all_reported_bugs_query=$all_reported_bugs_query." and t.user=" . $informer;
-}
+$all_reported_bugs_query=$all_reported_bugs_query." and t.user=" . $informer;
+
 if (!empty($day_from) && !empty($day_to) && !empty($month_from) && !empty($month_to) && !empty($year_from) && !empty($year_to)) {
   $all_reported_bugs_query=$all_reported_bugs_query." and t.expenditure_date between '" . $year_from . "-" . $month_from . "-" . $day_from . "' and '" . $year_to . "-" . $month_to . "-" . $day_to . "'"; 
 }
@@ -164,9 +155,9 @@ $dl_link1 .= $all_reported_bugs_query;
 $dl_link2 = "plugin.php?page=TimeTrack/tt_csv.php&query=";
 $dl_link2 .= $all_reported_bugs_query;
 ?>
-<td><a href="<?php echo $dl_link1 ?>"><?php echo lang_get( 'timetrack_xls')?></a></td> 
+<td><a href="<?php echo $dl_link1 ?>"><?php echo lang_get( 'timetrack_xls') ?></a></td> 
 <td></td>
-<td><a href="<?php echo $dl_link2 ?>"><?php echo lang_get( 'timetrack_csv') ?></a></td> 
+<td><a href="<?php echo $dl_link2 ?>"><?php echo lang_get( 'timetrack_xls') ?></a></td> 
 <td colspan="7" align="right"><b><?php echo lang_get( 'timetrack_total') ?></b></td><td align="right"><?php echo number_format($total_hours,2,',','.') ?></td></tr>
 <input type="hidden" name="show_flag" value="1" />
 </table>

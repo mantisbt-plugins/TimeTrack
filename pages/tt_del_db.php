@@ -15,5 +15,4 @@ if ( access_has_bug_level( plugin_config_get( 'timetrack_delete_threshold' ), $b
 		history_log_event_direct( $bug_id, lang_get( 'time_tracking_history' ). " " . lang_get('time_tracking_deleted') . ": " . $row['info'], date("d.m.Y", strtotime($row["expenditure_date"])) . ": " . number_format($row["hours"], 2, ',', '.') . " h.", "deleted", $user );
 	}
 }
-
 print_header_redirect( 'view.php?id='.$bug_id.'' );

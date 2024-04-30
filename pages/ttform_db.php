@@ -2,7 +2,7 @@
 $bug_id		= gpc_get_int( 'id' );
 $create_his	= plugin_config_get('timetrack_history');
 $maxrec 	= plugin_config_get('timetrack_maxrec');
-$user = auth_get_current_user_id();
+
 $time_info = db_prepare_string($_REQUEST["time_info"]);
 
 # Work on Time-Entry so we can eval it
@@ -25,6 +25,7 @@ if($_REQUEST["time_unit"] == "md"){
 $costs = $time_value * plugin_config_get('consultant_hourly_charge');
 	
 # Write Post-Data to DB
+$user = $_REQUEST["informer"];
 $year = $_REQUEST["year"];
 $month = $_REQUEST["month"];
 $day = $_REQUEST["day"];

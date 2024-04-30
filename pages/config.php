@@ -105,6 +105,45 @@ print_manage_menu( 'manage_plugin_page.php' );
 	</td>
 </tr> 
 
+<tr >
+	<td class="category" width="60%">
+		<?php echo lang_get( 'show_myview')?>
+	</td>
+	<td class="center" width="20%">
+		<label><input type="radio" name='show_myview' value="1" <?php echo( ON == plugin_config_get( 'show_myview' ) ) ? 'checked="checked" ' : ''?>/>
+			<?php echo lang_get( 'enabledtt' )?></label>
+	</td>
+	<td class="center" width="20%">
+		<label><input type="radio" name='show_myview' value="0" <?php echo( OFF == plugin_config_get( 'show_myview' ) )? 'checked="checked" ' : ''?>/>
+			<?php echo lang_get( 'disabledtt' )?></label>
+	</td>
+</tr> 
+
+<tr >
+	<td class="category" width="60%">
+		<?php echo lang_get( 'show_main')?>
+	</td>
+	<td class="center" width="20%">
+		<label><input type="radio" name='show_main' value="1" <?php echo( ON == plugin_config_get( 'show_main' ) ) ? 'checked="checked" ' : ''?>/>
+			<?php echo lang_get( 'enabledtt' )?></label>
+	</td>
+	<td class="center" width="20%">
+		<label><input type="radio" name='show_main' value="0" <?php echo( OFF == plugin_config_get( 'show_main' ) )? 'checked="checked" ' : ''?>/>
+			<?php echo lang_get( 'disabledtt' )?></label>
+	</td>
+</tr> 
+
+<tr >
+	<td class="category">
+		<?php echo lang_get( 'report_other_threshold' ) ?>
+	</td>
+	<td class="center">
+			<select name="report_other_threshold">
+			<?php print_enum_string_option_list( 'access_levels', plugin_config_get( 'report_other_threshold'  ) ) ?>;
+			</select> 
+	</td>
+		<td></td>
+</tr>
 
 <tr>
 	<td class="center" colspan="3">
