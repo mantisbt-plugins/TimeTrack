@@ -19,7 +19,7 @@ Original by Elmar Schumacher  2005 (elmar.schumacher@web.de)  GAMBIT Consulting 
 
 Like any other plugin. 
 After copying to your webserver :
-- Start mantis ad administrator
+- Start mantis as administrator
 - Select manage
 - Select manage Plugins
 - Select Install behind TimeTrack 1.10
