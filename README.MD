@@ -15,7 +15,7 @@ Released under the [GPL v3 license](http://opensource.org/licenses/GPL-3.0).
 
 Original by Elmar Schumacher  2005 (elmar.schumacher@web.de)  GAMBIT Consulting GmbH for mantis version 1.x
 
-##  Installation                                                                             *
+##  Installation
 
 Like any other plugin. 
 After copying to your webserver :
