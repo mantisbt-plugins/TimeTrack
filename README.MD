@@ -31,16 +31,16 @@ event_signal( 'EVENT_MYVIEW' );
 
 ## configuration options
 
-- consultant_hourly_charge			What is the labor rate per hour						Default	= 50
-- consultant_manday_definition		How many hours in one working day					Default = 8
-- timetrack_delete_threshold		What level is required to delete a time recording	Default = DEVELOPER
-- timetrack_add_threshold			What level is required to add a time recording		Deafult = DEVELOPER
-- timetrack_admin_threshold			What level is required to manage plugin				Default = ADMINISTRATOR
-- timetrack_history					Make history entries for time recording activities	Default = ON
-- timetrack_maxrec					Max records to show without selection criteris		Default = 35
-- show_myview						Show a section in the My View page					Default = OFF
-- show_main							Show an option on the main menu						Default = ON
-- report_other_threshold			Level required to make time recording for others	Default = MANAGER
+- consultant_hourly_charge &nbsp; What is the labor rate per hour &nbsp; Default	= 50
+- consultant_manday_definition &nbsp; How many hours in one working day &nbsp; Default = 8
+- timetrack_delete_threshold	&nbsp;	What level is required to delete a time recording &nbsp;	Default = DEVELOPER
+- timetrack_add_threshold		&nbsp;	What level is required to add a time recording	&nbsp;	Deafult = DEVELOPER
+- timetrack_admin_threshold		&nbsp;	What level is required to manage plugin		&nbsp;		Default = ADMINISTRATOR
+- timetrack_history		&nbsp;			Make history entries for time recording activities &nbsp;	Default = ON
+- timetrack_maxrec		&nbsp;			Max records to show without selection criteris &nbsp;		Default = 35
+- show_myview		&nbsp;				Show a section in the My View page	&nbsp;				Default = OFF
+- show_main			&nbsp;				Show an option on the main menu			&nbsp;			Default = ON
+- report_other_threshold	&nbsp;		Level required to make time recording for others &nbsp;	Default = MANAGER
 
 ## Support
 
