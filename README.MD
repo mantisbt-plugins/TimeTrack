@@ -68,6 +68,6 @@ Support via https://github.com/mantisbt-plugins/TimeTrack
 
 ## Greetings
 
-Cas Nuy 
-cas@nuy.info
+Cas Nuy <br>
+cas@nuy.info <br>
 http://www.nuy.info
