@@ -157,7 +157,7 @@ $dl_link2 .= $all_reported_bugs_query;
 ?>
 <td><a href="<?php echo $dl_link1 ?>"><?php echo lang_get( 'timetrack_xls') ?></a></td> 
 <td></td>
-<td><a href="<?php echo $dl_link2 ?>"><?php echo lang_get( 'timetrack_xls') ?></a></td> 
+<td><a href="<?php echo $dl_link2 ?>"><?php echo lang_get( 'timetrack_csv') ?></a></td> 
 <td colspan="7" align="right"><b><?php echo lang_get( 'timetrack_total') ?></b></td><td align="right"><?php echo number_format($total_hours,2,',','.') ?></td></tr>
 <input type="hidden" name="show_flag" value="1" />
 </table>
