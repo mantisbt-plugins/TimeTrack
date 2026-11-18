@@ -10,7 +10,7 @@ $f_timetrack_add_threshold = gpc_get_int( 'timetrack_add_threshold', DEVELOPER )
 $f_timetrack_delete_threshold = gpc_get_int( 'timetrack_delete_threshold', DEVELOPER );
 $f_timetrack_history = gpc_get_int( 'timetrack_history', OFF );
 $f_show_myview = gpc_get_int( 'show_myview', OFF );
-$f_show_main = gpc_get_int( 'show_main', ONF );
+$f_show_main = gpc_get_int( 'show_main', OFF );
 $f_report_other_threshold = gpc_get_int( 'report_other_threshold', DEVELOPER );
 plugin_config_set( 'consultant_hourly_charge', $f_consultant_hourly_charge );
 plugin_config_set( 'consultant_manday_definition', $f_consultant_manday_definition );
